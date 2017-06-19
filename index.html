@@ -24,6 +24,36 @@
 	     fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
 	</script>
+	<script>
+	var Notification = window.Notification || window.mozNotification || window.webkitNotification;
+
+	Notification.requestPermission(function (permission) {
+		// console.log(permission);
+	});
+
+	function show() {
+		var instance = new Notification(
+			"This is a test notification for module 5", {
+				body: "Hooray! I got this to work :0)"
+			}
+		);
+
+		instance.onclick = function () {
+			// Something to do
+		};
+		instance.onerror = function () {
+			// Something to do
+		};
+		instance.onshow = function () {
+			// Something to do
+		};
+		instance.onclose = function () {
+			// Something to do
+		};
+	}
+</script>
+
+<button type="button" onclick="show()">Notify me!</button>
 </head>
 <body>
 
